@@ -1,0 +1,32 @@
+CMakeFiles/GCMake.dir/src/cJSON.c.obj: \
+ C:\Users\ellip\Documents\c\Projects\GCMake\src\cJSON.c \
+ C:/mingw/x86_64-w64-mingw32/include/string.h \
+ C:/mingw/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/mingw/x86_64-w64-mingw32/include/corecrt.h \
+ C:/mingw/x86_64-w64-mingw32/include/_mingw.h \
+ C:/mingw/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/mingw/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/mingw/x86_64-w64-mingw32/include/vadefs.h \
+ C:/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/mingw/x86_64-w64-mingw32/include/stdio.h \
+ C:/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+ C:/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/mingw/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/mingw/x86_64-w64-mingw32/include/math.h \
+ C:/mingw/x86_64-w64-mingw32/include/stdlib.h \
+ C:/mingw/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/mingw/lib/gcc/x86_64-w64-mingw32/13.2.0/include/limits.h \
+ C:/mingw/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h \
+ C:/mingw/x86_64-w64-mingw32/include/limits.h \
+ C:/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/mingw/x86_64-w64-mingw32/include/malloc.h \
+ C:/mingw/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
+ C:/mingw/x86_64-w64-mingw32/include/errno.h \
+ C:/mingw/x86_64-w64-mingw32/include/ctype.h \
+ C:/mingw/lib/gcc/x86_64-w64-mingw32/13.2.0/include/float.h \
+ C:/mingw/x86_64-w64-mingw32/include/float.h \
+ C:/Users/ellip/Documents/c/Projects/GCMake/include/cJSON.h \
+ C:/mingw/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \
+ C:/mingw/x86_64-w64-mingw32/include/stddef.h

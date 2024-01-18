@@ -1,0 +1,3 @@
+C:/Users/ellip/Documents/c/Projects/GCMake/build/CMakeFiles/GCMake.dir
+C:/Users/ellip/Documents/c/Projects/GCMake/build/CMakeFiles/edit_cache.dir
+C:/Users/ellip/Documents/c/Projects/GCMake/build/CMakeFiles/rebuild_cache.dir
