@@ -1,7 +1,0 @@
-!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
-GCMake	C:/Users/ellip/Documents/c/Projects/GCMake/CMakeLists.txt	/^add_executable(GCMake src\/main.c src\/cJSON.c)$/;"	t	language:CMake
-GCMake	C:/Users/ellip/Documents/c/Projects/GCMake/CMakeLists.txt	/^project(GCMake)$/;"	p	language:CMake
-glob	C:/Users/ellip/Documents/c/Projects/GCMake/src/main.c	/^bool glob(const char* pat, const char* str){$/;"	f	language:C++	typeref:typename:bool
-main	C:/Users/ellip/Documents/c/Projects/GCMake/src/main.c	/^int main(){$/;"	f	language:C++	typeref:typename:int
-pattern	C:/Users/ellip/Documents/c/Projects/GCMake/src/main.c	/^char* pattern = "*.c";$/;"	v	language:C++	typeref:typename:char *
-visit	C:/Users/ellip/Documents/c/Projects/GCMake/src/main.c	/^int visit(const char* path, const struct stat* stat, int flags, struct FTW* ftw){$/;"	f	language:C++	typeref:typename:int
