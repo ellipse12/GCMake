@@ -128,6 +128,30 @@ GCMake/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/build
 .PHONY : GCMake/fast
 
+src/GCMake.obj: src/GCMake.c.obj
+.PHONY : src/GCMake.obj
+
+# target to build an object file
+src/GCMake.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/GCMake.c.obj
+.PHONY : src/GCMake.c.obj
+
+src/GCMake.i: src/GCMake.c.i
+.PHONY : src/GCMake.i
+
+# target to preprocess a source file
+src/GCMake.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/GCMake.c.i
+.PHONY : src/GCMake.c.i
+
+src/GCMake.s: src/GCMake.c.s
+.PHONY : src/GCMake.s
+
+# target to generate assembly for a file
+src/GCMake.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/GCMake.c.s
+.PHONY : src/GCMake.c.s
+
 src/cJSON.obj: src/cJSON.c.obj
 .PHONY : src/cJSON.obj
 
@@ -152,30 +176,6 @@ src/cJSON.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/cJSON.c.s
 .PHONY : src/cJSON.c.s
 
-src/main.obj: src/main.c.obj
-.PHONY : src/main.obj
-
-# target to build an object file
-src/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/main.c.obj
-.PHONY : src/main.c.obj
-
-src/main.i: src/main.c.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GCMake.dir\build.make CMakeFiles/GCMake.dir/src/main.c.s
-.PHONY : src/main.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -185,12 +185,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GCMake
+	@echo ... src/GCMake.obj
+	@echo ... src/GCMake.i
+	@echo ... src/GCMake.s
 	@echo ... src/cJSON.obj
 	@echo ... src/cJSON.i
 	@echo ... src/cJSON.s
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
 .PHONY : help
 
 

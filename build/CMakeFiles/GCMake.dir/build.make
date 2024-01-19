@@ -68,20 +68,20 @@ include CMakeFiles/GCMake.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GCMake.dir/flags.make
 
-CMakeFiles/GCMake.dir/src/main.c.obj: CMakeFiles/GCMake.dir/flags.make
-CMakeFiles/GCMake.dir/src/main.c.obj: CMakeFiles/GCMake.dir/includes_C.rsp
-CMakeFiles/GCMake.dir/src/main.c.obj: C:/Users/ellip/Documents/c/Projects/GCMake/src/main.c
-CMakeFiles/GCMake.dir/src/main.c.obj: CMakeFiles/GCMake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ellip\Documents\c\Projects\GCMake\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GCMake.dir/src/main.c.obj"
-	C:\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GCMake.dir/src/main.c.obj -MF CMakeFiles\GCMake.dir\src\main.c.obj.d -o CMakeFiles\GCMake.dir\src\main.c.obj -c C:\Users\ellip\Documents\c\Projects\GCMake\src\main.c
+CMakeFiles/GCMake.dir/src/GCMake.c.obj: CMakeFiles/GCMake.dir/flags.make
+CMakeFiles/GCMake.dir/src/GCMake.c.obj: CMakeFiles/GCMake.dir/includes_C.rsp
+CMakeFiles/GCMake.dir/src/GCMake.c.obj: C:/Users/ellip/Documents/c/Projects/GCMake/src/GCMake.c
+CMakeFiles/GCMake.dir/src/GCMake.c.obj: CMakeFiles/GCMake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ellip\Documents\c\Projects\GCMake\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GCMake.dir/src/GCMake.c.obj"
+	C:\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GCMake.dir/src/GCMake.c.obj -MF CMakeFiles\GCMake.dir\src\GCMake.c.obj.d -o CMakeFiles\GCMake.dir\src\GCMake.c.obj -c C:\Users\ellip\Documents\c\Projects\GCMake\src\GCMake.c
 
-CMakeFiles/GCMake.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GCMake.dir/src/main.c.i"
-	C:\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\ellip\Documents\c\Projects\GCMake\src\main.c > CMakeFiles\GCMake.dir\src\main.c.i
+CMakeFiles/GCMake.dir/src/GCMake.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GCMake.dir/src/GCMake.c.i"
+	C:\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\ellip\Documents\c\Projects\GCMake\src\GCMake.c > CMakeFiles\GCMake.dir\src\GCMake.c.i
 
-CMakeFiles/GCMake.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GCMake.dir/src/main.c.s"
-	C:\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\ellip\Documents\c\Projects\GCMake\src\main.c -o CMakeFiles\GCMake.dir\src\main.c.s
+CMakeFiles/GCMake.dir/src/GCMake.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GCMake.dir/src/GCMake.c.s"
+	C:\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\ellip\Documents\c\Projects\GCMake\src\GCMake.c -o CMakeFiles\GCMake.dir\src\GCMake.c.s
 
 CMakeFiles/GCMake.dir/src/cJSON.c.obj: CMakeFiles/GCMake.dir/flags.make
 CMakeFiles/GCMake.dir/src/cJSON.c.obj: CMakeFiles/GCMake.dir/includes_C.rsp
@@ -100,13 +100,13 @@ CMakeFiles/GCMake.dir/src/cJSON.c.s: cmake_force
 
 # Object files for target GCMake
 GCMake_OBJECTS = \
-"CMakeFiles/GCMake.dir/src/main.c.obj" \
+"CMakeFiles/GCMake.dir/src/GCMake.c.obj" \
 "CMakeFiles/GCMake.dir/src/cJSON.c.obj"
 
 # External object files for target GCMake
 GCMake_EXTERNAL_OBJECTS =
 
-GCMake.exe: CMakeFiles/GCMake.dir/src/main.c.obj
+GCMake.exe: CMakeFiles/GCMake.dir/src/GCMake.c.obj
 GCMake.exe: CMakeFiles/GCMake.dir/src/cJSON.c.obj
 GCMake.exe: CMakeFiles/GCMake.dir/build.make
 GCMake.exe: CMakeFiles/GCMake.dir/linkLibs.rsp

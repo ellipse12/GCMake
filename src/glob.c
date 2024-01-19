@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <ftw.h>
-#include <stdbool.h>
+
+#include "glob.h"
 
 bool glob(const char* pat, const char* str){
     const char* back_pat = NULL;
@@ -58,19 +57,3 @@ backtrack:
 }
 
 
-
-char* pattern = "*.c";
-int visit(const char* path, const struct stat* stat, int flags, struct FTW* ftw){
-    if(glob(pattern, path)){
-        printf("file: %s\n", path);
-    }
-    return 0;
-}
-
-
-int main(){
-    if(nftw(".", visit, 10, 0) != 0){
-        perror("nftw");
-    }
-    return 0;
-}

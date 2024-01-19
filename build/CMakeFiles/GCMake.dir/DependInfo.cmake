@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/ellip/Documents/c/Projects/GCMake/src/GCMake.c" "CMakeFiles/GCMake.dir/src/GCMake.c.obj" "gcc" "CMakeFiles/GCMake.dir/src/GCMake.c.obj.d"
   "C:/Users/ellip/Documents/c/Projects/GCMake/src/cJSON.c" "CMakeFiles/GCMake.dir/src/cJSON.c.obj" "gcc" "CMakeFiles/GCMake.dir/src/cJSON.c.obj.d"
-  "C:/Users/ellip/Documents/c/Projects/GCMake/src/main.c" "CMakeFiles/GCMake.dir/src/main.c.obj" "gcc" "CMakeFiles/GCMake.dir/src/main.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
