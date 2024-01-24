@@ -1,10 +1,12 @@
 #define _XOPEN_SOURCE 500
 #define _GNU_SOURCE
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <ftw.h>
-#include "glob.h"
+#include <glob.h>
 #include "cJSON.h"
+#include <assert.h>
 typedef struct {
     const char** files;
     size_t files_length;
@@ -14,15 +16,52 @@ typedef struct {
     size_t file_patterns_length;
     const char** dirs_patterns;
     size_t dirs_patterns_length;
-
-    cJSON* json; 
+	char* out_buffer;
+    size_t out_buffer_length;
+	cJSON* json; 
 
 }Data;
 
+Data data = {0};
+
+
+void gcmake_write(){
+	FILE* fp;
+	char* buffer;
+	if((fp = fopen("GCMakeLists.txt", "r")) == NULL){
+		perror("Could not find or create CMakeList.txt file.");
+		exit(1);
+	}
+	fseek(fp, 0, SEEK_END);
+	size_t length = ftell(fp);
+	rewind(fp);
+	char* temp = malloc(sizeof(char) * length + 1);
+	fread(temp, sizeof(char), length, fp);
+	if(ferror(fp) != 0){
+		perror("An error occured!");
+		fclose(fp);
+		exit(1);
+	}
+	fclose(fp);
+	if((fp = fopen("CMakeLists.txt", "w")) == NULL){
+		perror("Failed to write to file");
+		exit(1);
+	}
+	const char header[] = "########GCMake Generated Block DO NOT EDIT########\n";
+	const char footer[] = "##################################################\n";
+	fwrite(header, sizeof(char), sizeof(header) - 1, fp);
+	fwrite("set(GCMAKE_FILES ", sizeof(char), 17, fp);
+	fwrite(data.out_buffer,sizeof(char), data.out_buffer_length, fp);
+	fwrite(")\n", sizeof(char), 2, fp);
+	fwrite(footer, sizeof(char), sizeof(footer) - 1, fp);
+	fwrite(temp, sizeof(char), length, fp);
+
+	fclose(fp);
+}
 
 const char* gcmake_read(){
     FILE* fp;
-    if((fp = fopen("GCMake.json", "r+")) == NULL){
+    if((fp = fopen("GCMake.json", "r")) == NULL){
         perror("Could not find GCMake.json file.");
         exit(1);
     }
@@ -37,6 +76,7 @@ const char* gcmake_read(){
     fread(out,sizeof(char), length, fp); 
     if(ferror(fp) != 0){
         perror("Could not read file");
+		fclose(fp);
         exit(1);
     }
     return out;
@@ -87,28 +127,57 @@ void gcmake_parse(Data* out, const char* data){
     iterate_json(json, "dirs", out->dirs_patterns);
 }
 
-int gcmake_visit(const char* path, const struct stat* stats, int type, struct FTW* ftwbuf){
-	printf("%s\n", path);
-	return type==FTW_D ? FTW_SKIP_SUBTREE : FTW_CONTINUE;
+bool glob_arr_contains(const char** arr, int arr_length, const char* value){
+	for(int i = 0; i < arr_length; i++){
+		if(glob(arr[i], value)){
+			return true;
+		}
+	}
+	return false;
 }
 
+int gcmake_visit(const char* path, const struct stat* stats, int type, struct FTW* ftwbuf){
+    int base = ftwbuf->base;
+	if(ftwbuf->level == 0){
+		return FTW_CONTINUE;
+	}
+	if(type == FTW_D && !glob_arr_contains(data.dirs_patterns, data.dirs_patterns_length, path + base)){
+		return FTW_SKIP_SUBTREE;
+	}
+	if(type == FTW_F && glob_arr_contains(data.file_patterns, data.file_patterns_length, path + base)){
+		size_t str_len = strlen(path);
+		char* temp_path = malloc(sizeof(char) * (str_len + 4));
+		temp_path[0] = ' ';
+		temp_path[1] = '"';
+		strcpy(temp_path + 2, path);
+		temp_path[str_len + 2] = '\"';
+		temp_path[str_len + 3] = '\0';
+		data.out_buffer = realloc(data.out_buffer, sizeof(char) * (data.out_buffer_length + str_len + 4));
+		strcat(data.out_buffer, temp_path);
+		data.out_buffer_length += str_len + 3;
+		free(temp_path);
+		
+	}
+	return FTW_CONTINUE;	
+		
+
+}
+
+
 void gcmake_run(Data* data){
-	if(nftw(".", gcmake_visit, 10, FTW_ACTIONRETVAL) == -1){
+	if(nftw(".", gcmake_visit, 10, FTW_ACTIONRETVAL | FTW_CHDIR) == -1){
 		perror("nftw");
 		exit(EXIT_FAILURE);
 	}
 }
 
-
 int main(){
 
-    const char* data = gcmake_read();
-    
-    Data da = {0};
-    gcmake_parse(&da, data);
-    for(int i = 0; i < da.file_patterns_length; i++){
-        printf("pattern: %s\n", da.file_patterns[i]);
-    }     
-	gcmake_run(&da);
-    return 0;
+    const char* da = gcmake_read();
+	gcmake_parse(&data, da);
+	gcmake_run(&data);
+	gcmake_write();	
+
+
+	return 0;
 }

@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.1)
+project(GCMake)
+add_executable(GCMake ${GCMAKE_FILES})
+target_include_directories(GCMake PRIVATE include)

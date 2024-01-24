@@ -1,6 +1,6 @@
 
 #include "glob.h"
-
+#include <stddef.h>
 bool glob(const char* pat, const char* str){
     const char* back_pat = NULL;
     const char* back_str;
@@ -53,7 +53,7 @@ backtrack:
                     str = ++back_str;
                     break;
         }
-    }   
+    }
 }
 
 
