@@ -1,6 +1,10 @@
 # GCMake
 A simple CMakeLists.txt generator that adds glob capabilities without removing performance.
 
+# Bulding
+To build use typical cmake build commands (e.g. mkdir build, cd build, cmake ..).
+Note: on windows you must use gcc or somehow have access to the glibc libraries (this is going to change in the future).
+
 # Usage
 First, create your CMake configuration and then save it as GCMakeLists.txt (This is what would normally go in CMakeLists.txt).
 Then, make a GCMake.json file in the same directory, this is were the configuration for glob goes. There are currently two options: 
