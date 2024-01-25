@@ -29,13 +29,13 @@ jobs:
         include:
           - os: windows-latest
             c_compiler: gcc
-            cpp_compiler: c++
+            cpp_compiler: gcc
           - os: ubuntu-latest
             c_compiler: gcc
-            cpp_compiler: g++
+            cpp_compiler: gcc
           - os: ubuntu-latest
             c_compiler: gcc
-            cpp_compiler: clang++
+            cpp_compiler: gcc
         exclude:
           - os: windows-latest
             c_compiler: gcc
