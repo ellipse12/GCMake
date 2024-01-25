@@ -1,6 +1,7 @@
 
 #include "glob.h"
 #include <stddef.h>
+#include <stdbool.h>
 bool glob(const char* pat, const char* str){
     const char* back_pat = NULL;
     const char* back_str;
