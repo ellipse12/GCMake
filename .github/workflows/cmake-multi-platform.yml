@@ -25,12 +25,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         build_type: [Release]
-        c_compiler: [gcc-latest]
+        c_compiler: [gcc]
         include:
           - os: windows-latest
-            c_compiler: gcc-latest
-            cpp_compiler: gcc
-          - os: ubuntu-latest
             c_compiler: gcc
             cpp_compiler: gcc
           - os: ubuntu-latest
@@ -38,7 +35,7 @@ jobs:
             cpp_compiler: gcc
         exclude:
           - os: windows-latest
-            c_compiler: clang
+            c_compiler: msvc
           - os: windows-latest
             c_compiler: msvc
           - os: ubuntu-latest
