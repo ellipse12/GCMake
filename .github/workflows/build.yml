@@ -80,6 +80,15 @@ jobs:
       run: gem install fpm
     - name: Package
       run: fpm -s dir -t deb -p gcmake.deb --name gcm --license MIT --version 1.0.0 --architecture all build/gcm=/usr/bin/gcm
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: latest
+        name: Latest
+        files: gcmake.deb
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
     
     
       
