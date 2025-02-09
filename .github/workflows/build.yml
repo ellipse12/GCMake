@@ -81,7 +81,7 @@ jobs:
     - name: Package
       run: fpm -s dir -t deb -p gcmake.deb --name gcm --license MIT --version 1.0.0 --architecture all build/gcm=/usr/bin/gcm
     - name: Create Release
-      uses: 
+      uses: actions/upload-artifact@v4
       with:
         name: gcmake
         path: gcmake.deb
